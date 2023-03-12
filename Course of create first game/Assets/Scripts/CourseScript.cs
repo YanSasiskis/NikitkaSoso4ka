@@ -54,6 +54,10 @@ public class CourseScript : MonoBehaviour
         {
             _spriteRenderer.flipX = true;
         }
+        if (_hp == 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void FixedUpdate()
     {
