@@ -10,9 +10,9 @@ public class chest : MonoBehaviour
         CourseScript player = other.GetComponent<CourseScript>();     
         if (player != null)
         {
-            player.Coins += _coinsAmount;
+            player.CoinsAmount += _coinsAmount;
             Destroy(gameObject);
-            Debug.Log("Монет: " + player.Coins);
+            Debug.Log("Монет: " + player.CoinsAmount);
         }
     }
     

@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using System;
+using UnityEngine.Serialization;
+using TMPro;
 
 public class CourseScript : MonoBehaviour
 {
@@ -10,20 +13,34 @@ public class CourseScript : MonoBehaviour
     [SerializeField] private float _groundCheckerRadius;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Animator _animator;
+    [Header("UI")]
+    [SerializeField] private TMP_Text _coinAmountText;
+    [SerializeField] private int _hp;
 
-    public int Coins { get; set; } // коины не стакаются 
-
+    public int CoinsAmount
+    {
+        get
+        {
+            return _coinsAmount;
+        }
+        set
+        {
+            _coinsAmount = value;
+            _coinAmountText.text = "Coins: " + value.ToString();
+        }
+    }
+  
+    private int _coinsAmount;
     private float _direction;
     private bool _jump;
     private void Start()
     {
-        transform.position = new Vector2(-9.56437f, 1);
+        CoinsAmount = 0;
     }
 
     private void Update()
     {
         _direction = Input.GetAxisRaw("Horizontal");
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -61,9 +78,14 @@ public class CourseScript : MonoBehaviour
     }
     
     public void IncreaseHP(int hpPoints)
-    {
-        
+    {      
         Debug.Log("HP has been increased" + hpPoints);
     }
-}
+    public void TakeDamage(int damage)
+    {
+        _hp -= damage;
+        Debug.Log("HP has been increased by 1 HP");
+        Debug.Log(_hp);
+    }
+}   
 

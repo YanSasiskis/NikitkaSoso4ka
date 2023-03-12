@@ -13,11 +13,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - Ground
+  - Enemy
   - Items
-  - 
-  - 
-  - 
+  - Teleporter
+  - Enemy
+  - Ground
   - 
   - 
   - 
