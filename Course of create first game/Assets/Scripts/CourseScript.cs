@@ -84,9 +84,12 @@ public class CourseScript : MonoBehaviour
     }
     
     public void IncreaseHP(int hpPoints)
-    {      
+    {
+        _hp += hpPoints;
+        HealthIndicator.Health = _hp;
         Debug.Log("HP has been increased" + hpPoints);
     }
+    
     public void TakeDamage(int damage)
     {
         _hp -= damage;
@@ -99,6 +102,7 @@ public class CourseScript : MonoBehaviour
             ReloadScene();
         }
     }
+    
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

@@ -8,7 +8,6 @@ public class EnemyDamage : MonoBehaviour
     private float _lastDamageTime = 0;
     private float _damageDelay = 1f;
     private CourseScript _player;
-
     private void Update()
     {
         if (_player != null && Time.time - _lastDamageTime > _damageDelay)
@@ -18,6 +17,7 @@ public class EnemyDamage : MonoBehaviour
             _player.TakeDamage(_damage);;
         }
     }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CourseScript player = collision.gameObject.GetComponent<CourseScript>();
@@ -29,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
             _player = player;
         }
     }
+    
     private void OnCollisionExit2D(Collision2D collision)
     {
         CourseScript player = collision.gameObject.GetComponent<CourseScript>();
@@ -37,6 +38,5 @@ public class EnemyDamage : MonoBehaviour
             Debug.Log("Exit from collision");
             _player = null;           
         }
-    }
-    
+    }  
 }
