@@ -2,6 +2,7 @@
 using System;
 using UnityEngine.Serialization;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CourseScript : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class CourseScript : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("UI")]
     [SerializeField] private TMP_Text _coinAmountText;
-    [SerializeField] private int _hp;
-
+  
     public int CoinsAmount
     {
         get
@@ -29,12 +29,13 @@ public class CourseScript : MonoBehaviour
             _coinAmountText.text = "Coins: " + value.ToString();
         }
     }
-  
+    private int _hp = 3;
     private int _coinsAmount;
     private float _direction;
     private bool _jump;
     private void Start()
     {
+        HealthIndicator.Health = _hp;
         CoinsAmount = 0;
     }
 
@@ -58,6 +59,7 @@ public class CourseScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     private void FixedUpdate()
     {
@@ -88,8 +90,19 @@ public class CourseScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hp -= damage;
-        Debug.Log("HP has been increased by 1 HP");
+        HealthIndicator.Health = _hp;
         Debug.Log(_hp);
+        if (_hp == 0)
+        {
+            Debug.Log("Dead");
+            gameObject.SetActive(false);
+            ReloadScene();
+        }
+    }
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Invoke(nameof(ReloadScene), 3f);
     }
 }   
 
