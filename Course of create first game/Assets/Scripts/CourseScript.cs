@@ -16,6 +16,7 @@ public class CourseScript : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("UI")]
     [SerializeField] private TMP_Text _coinAmountText;
+    
   
     public int CoinsAmount
     {
@@ -33,6 +34,7 @@ public class CourseScript : MonoBehaviour
     private int _coinsAmount;
     private float _direction;
     private bool _jump;
+    private float _lastPushTime;
     private void Start()
     {
         HealthIndicator.Health = _hp;
@@ -89,8 +91,8 @@ public class CourseScript : MonoBehaviour
         HealthIndicator.Health = _hp;
         Debug.Log("HP has been increased" + hpPoints);
     }
-    
-    public void TakeDamage(int damage)
+
+    public void TakeDamage(int damage, float pushPower = 0, float enemyPosX = 0)
     {
         _hp -= damage;
         HealthIndicator.Health = _hp;
@@ -100,6 +102,12 @@ public class CourseScript : MonoBehaviour
             Debug.Log("Dead");
             gameObject.SetActive(false);
             ReloadScene();
+        }
+        if (pushPower != 0)
+        {
+            _lastPushTime = Time.time;
+            int direction = transform.position.x > enemyPosX ? 1 : -1;
+            _rigidbody.AddForce(new Vector2(direction * pushPower / 2, pushPower));
         }
     }
     

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private int _damage;
+    [SerializeField] private float _pushPower;
+
     private float _lastDamageTime = 0;
     private float _damageDelay = 1f;
     private CourseScript _player;
@@ -25,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
         {
             Debug.Log("EnterCollision");
             _lastDamageTime = Time.time;
-            player.TakeDamage(_damage);
+            player.TakeDamage(_damage,_pushPower,transform.position.x);
             _player = player;
         }
     }
