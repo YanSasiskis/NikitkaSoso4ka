@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class returnTeleport : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
     void Update()
     {
         if (transform.position.y < -15)

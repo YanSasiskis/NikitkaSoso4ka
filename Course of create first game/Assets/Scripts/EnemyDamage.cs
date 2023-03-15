@@ -19,26 +19,27 @@ public class EnemyDamage : MonoBehaviour
             _player.TakeDamage(_damage);;
         }
     }
-   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CourseScript player = collision.gameObject.GetComponent<CourseScript>();
-        if (player != null && Time.time - _lastDamageTime > _damageDelay)
         {
-            Debug.Log("EnterCollision");
-            _lastDamageTime = Time.time;
-            player.TakeDamage(_damage,_pushPower,transform.position.x);
-            _player = player;
+            CourseScript player = collision.gameObject.GetComponent<CourseScript>();
+            if (player != null && Time.time - _lastDamageTime > _damageDelay)
+            {
+                Debug.Log("EnterCollision");
+                _lastDamageTime = Time.time;
+                player.TakeDamage(_damage, _pushPower, transform.position.x);
+                _player = player;
+            }
         }
     }
-    
     private void OnCollisionExit2D(Collision2D collision)
     {
         CourseScript player = collision.gameObject.GetComponent<CourseScript>();
         if (player == _player)
         {
             Debug.Log("Exit from collision");
-            _player = null;           
+            _player = null;
         }
-    }  
+    }
 }

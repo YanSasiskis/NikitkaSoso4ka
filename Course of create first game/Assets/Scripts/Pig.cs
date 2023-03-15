@@ -12,8 +12,7 @@ public class Pig : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.velocity = Vector2.left * _direction * _speed;
-    }
-    
+    } 
 }
 
 
