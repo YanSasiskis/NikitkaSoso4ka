@@ -45,7 +45,7 @@ public class PlantEnemy : MonoBehaviour
     }
     private void StartShoot(Vector2 playerPosition)
     {
-        if (transform.position.x > playerPosition.x && _faceRight || transform.position.x <playerPosition.x && _faceRight)
+        if (transform.position.x > playerPosition.x && _faceRight || transform.position.x < playerPosition.x && _faceRight)
         {
             _faceRight = !_faceRight;
             transform.Rotate(0, 180, 0);
