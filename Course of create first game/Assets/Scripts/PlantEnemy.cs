@@ -48,8 +48,10 @@ public class PlantEnemy : MonoBehaviour
         if (transform.position.x > playerPosition.x && _faceRight || transform.position.x < playerPosition.x && _faceRight)
         {
             _faceRight = !_faceRight;
-            transform.Rotate(0, 180, 0);
+                transform.Rotate(0, 180, 0);
         }
+        else
+            transform.Rotate(0, 0, 0);
         _animator.SetBool(_shootAnimationKey, true);
     }
     public void Shoot()
