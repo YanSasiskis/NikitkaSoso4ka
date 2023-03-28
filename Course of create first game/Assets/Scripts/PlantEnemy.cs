@@ -45,18 +45,20 @@ public class PlantEnemy : MonoBehaviour
     }
     private void StartShoot(Vector2 playerPosition)
     {
-        if (transform.position.x > playerPosition.x && _faceRight || transform.position.x < playerPosition.x && _faceRight)
+        if (transform.position.x > playerPosition.x && !_faceRight || transform.position.x < playerPosition.x && _faceRight)
         {
             _faceRight = !_faceRight;
                 transform.Rotate(0, 180, 0);
-        }
-        else
-            transform.Rotate(0, 0, 0);
+        }     
         _animator.SetBool(_shootAnimationKey, true);
     }
     public void Shoot()
     {
         Rigidbody2D bullet = Instantiate(_bullet, _mazzle.position, Quaternion.identity);
+        if (!_faceRight)
+        {
+            bullet.transform.Rotate(0, 180, 0);
+        }
         bullet.velocity = _projectileSpeed * transform.right;
         _animator.SetBool(_shootAnimationKey, false);
         Invoke(nameof(CheckIfCanShoot), 1);

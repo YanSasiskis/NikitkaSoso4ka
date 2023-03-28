@@ -41567,7 +41567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1163827937}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: Slimak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41822,7 +41822,7 @@ MonoBehaviour:
   _projectileSpeed: 15
   _animator: {fileID: 1309264760}
   _shootAnimationKey: Shoot
-  _faceRight: 1
+  _faceRight: 0
 --- !u!1 &1352188825
 GameObject:
   m_ObjectHideFlags: 0
@@ -48676,8 +48676,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1.4147252
+  m_UseAutoMass: 0
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -48866,11 +48866,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454865347017764134, guid: db0dcc29a05ac70469cbbbcacc55029e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.32383
+      value: -5.4461727
       objectReference: {fileID: 0}
     - target: {fileID: 454865347017764134, guid: db0dcc29a05ac70469cbbbcacc55029e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.30923
+      value: 0.6292301
       objectReference: {fileID: 0}
     - target: {fileID: 454865347017764134, guid: db0dcc29a05ac70469cbbbcacc55029e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48951,11 +48951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704380182168837720, guid: 0ade97b175a372649b937750e7fd3a3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.99
+      value: -7.78
       objectReference: {fileID: 0}
     - target: {fileID: 3704380182168837720, guid: 0ade97b175a372649b937750e7fd3a3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.32
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 3704380182168837720, guid: 0ade97b175a372649b937750e7fd3a3f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49296,11 +49296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931232703199768893, guid: 87446cb4c0305b042954e6216279d2f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.32383
+      value: -5.4461727
       objectReference: {fileID: 0}
     - target: {fileID: 8931232703199768893, guid: 87446cb4c0305b042954e6216279d2f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.30923
+      value: 0.6292301
       objectReference: {fileID: 0}
     - target: {fileID: 8931232703199768893, guid: 87446cb4c0305b042954e6216279d2f0, type: 3}
       propertyPath: m_LocalPosition.z
