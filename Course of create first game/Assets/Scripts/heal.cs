@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class heal : MonoBehaviour
 {
-    [SerializeField] private int _hpPoints; 
+    [SerializeField] private int _hpPoints;
+    [SerializeField] private Animator _animator;
     private void OnTriggerEnter2D(Collider2D  other)
     {
-       CourseScript player = other.GetComponent<CourseScript>(); // не работает метод триггер
+       CourseScript player = other.GetComponent<CourseScript>(); 
        if (player != null && HealthIndicator.Health !=3)
        {
            player.IncreaseHP(_hpPoints);
-           Destroy(gameObject);
-        }
-    }       
+            _animator.SetBool("smoke", true);
+            Invoke(nameof(Destroy), 0.3f);
+       }
+    }
+    private void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

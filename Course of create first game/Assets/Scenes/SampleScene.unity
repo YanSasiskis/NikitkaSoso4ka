@@ -901,6 +901,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5997002387529985642, guid: d5842ab586328af4a9017fdfbb1fdc49, type: 3}
   m_PrefabInstance: {fileID: 5997002387132303754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &978603539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5997002387529985621, guid: d5842ab586328af4a9017fdfbb1fdc49, type: 3}
+  m_PrefabInstance: {fileID: 5997002387132303754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &978603543
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978603539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0bc24d40b8351b246ae4260dad3163d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1027083359
 GameObject:
   m_ObjectHideFlags: 0
@@ -48762,7 +48787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741073807}
   m_LocalRotation: {x: 0.0013962553, y: 0, z: 0, w: 0.99999905}
-  m_LocalPosition: {x: -84.81, y: 1.73, z: 0}
+  m_LocalPosition: {x: -106.82, y: 2.94, z: 0}
   m_LocalScale: {x: -6.95, y: 6.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48866,7 +48891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454865347017764134, guid: db0dcc29a05ac70469cbbbcacc55029e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4461727
+      value: -4.715015
       objectReference: {fileID: 0}
     - target: {fileID: 454865347017764134, guid: db0dcc29a05ac70469cbbbcacc55029e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49140,6 +49165,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5997002387529985646, guid: d5842ab586328af4a9017fdfbb1fdc49, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 978603543}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5842ab586328af4a9017fdfbb1fdc49, type: 3}
 --- !u!1001 &7996796718294421794
@@ -49296,7 +49325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931232703199768893, guid: 87446cb4c0305b042954e6216279d2f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4461727
+      value: -4.715015
       objectReference: {fileID: 0}
     - target: {fileID: 8931232703199768893, guid: 87446cb4c0305b042954e6216279d2f0, type: 3}
       propertyPath: m_LocalPosition.y
