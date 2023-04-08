@@ -97,7 +97,7 @@ public class CourseScript : MonoBehaviour
         _hp -= damage;
         HealthIndicator.Health = _hp;
         Debug.Log(_hp);
-        if (_hp == 0)
+        if (_hp <= 0)
         {
             Debug.Log("Dead");
             gameObject.SetActive(false);
