@@ -55,4 +55,5 @@ public class Slimer : MonoBehaviour
         transform.Rotate(0, 180, 0);
         _direction *= -1;
     }
+    
 }
