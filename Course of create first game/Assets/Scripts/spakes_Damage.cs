@@ -21,6 +21,8 @@ public class spakes_Damage : MonoBehaviour
     }
     private void Update()
     {
+       // лучше реализовать это в OnTriggerStay2D, потому что в случае если у тебя будет много шипов, они все будут     
+       // постоянно вызывать метод update. Плохо для отпимизации.
        if (_player != null && Time.time - _lastTimeDamage > _timeDelay)
         {
             _lastTimeDamage = Time.time;

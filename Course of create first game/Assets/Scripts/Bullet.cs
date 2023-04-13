@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         {
             player.TakeDamage(_damageOfBullet);
         }
-        Destroy(gameObject);
+        Destroy(gameObject); // Πεΰλθησι Object Pooler
     }
     private void Start()
     {
@@ -23,6 +23,6 @@ public class Bullet : MonoBehaviour
     }
     private void Destroy()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); //  Πεΰλθησι Object Pooler
     }
 }

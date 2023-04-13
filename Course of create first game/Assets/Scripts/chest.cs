@@ -10,9 +10,9 @@ public class chest : MonoBehaviour
         CourseScript player = other.GetComponent<CourseScript>();     
         if (player != null)
         {
-            player.CoinsAmount += _coinsAmount;
+            player.CoinsAmount += _coinsAmount; // Создай отдельний класс Coins.
             Destroy(gameObject);
-            Debug.Log("Монет: " + player.CoinsAmount);
+            Debug.Log("Монет: " + player.CoinsAmount); // Если тебе больше не нужен вывод монет, удали строку
         }
     }
     

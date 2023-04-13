@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// лишние using
 public class parallaxBackGround : MonoBehaviour
 {
     [SerializeField] Transform followingTarget;
     [SerializeField, Range(0f, 1f)] float parallaxStrength = 0.1f;
     [SerializeField] bool disableVerticalParallax;
+    // не написал private. ƒа, они по умолчанию private, но никогда не будет лишним это подчеркнуть
     Vector3 targetPreviousPosition;
     
     void Start()

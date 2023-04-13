@@ -4,8 +4,24 @@ using UnityEngine.Serialization;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/*
+    Удаляй using, который твой класс не использует. В таком случае, using горит серым. В данном классе это:
+    System
+    using UnityEngine.Serialization;
+*/
 public class CourseScript : MonoBehaviour
 {
+    // Сортируй данный по объему типа.
+    /*
+    [SerializeField] private Transform _groundChecker;
+    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private LayerMask _whatIsGround;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _jumpPower;
+    [SerializeField] private float _groundCheckerRadius;
+    */
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -16,8 +32,28 @@ public class CourseScript : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("UI")]
     [SerializeField] private TMP_Text _coinAmountText;
-    
-  
+
+
+    // Создай отдельный класс Coins, у персонажа не должно быть логики, связанной с монетами.
+    // Если ты будешь все возможные функции добавлять персонажу, он будет у тебя как швейцарский нож, а это - плохо.
+    // Так как твой код будет расти, а ориентироваться в нем будет все сложнее и сложнее. 
+    // Каждый класс должен отвечать только за то, что в нём должно быть.
+    // Условно говоря, у персонажа должна быть анимация, скорость бега, скорость ходьбы, сила прыжка, урон. 
+    // Даже HP у него не должно быть, так как это уже отдельный класс. 
+    // Он должен использовать и хранить класс HP.
+    // Выглядеть это будет так:
+    /*
+         public void TakeDamage(int damage, float pushPower = 0, float enemyPosX = 0)
+         {
+            _hp.TakeDamage(damage);
+            if (pushPower != 0)
+            {
+                 _lastPushTime = Time.time;
+                 int direction = transform.position.x > enemyPosX ? 1 : -1;
+                 _rigidbody.AddForce(new Vector2(direction * pushPower / 2, pushPower));
+            }
+         }
+     */
     public int CoinsAmount
     {
         get
@@ -85,7 +121,8 @@ public class CourseScript : MonoBehaviour
         Gizmos.DrawWireSphere(_groundChecker.position, _groundCheckerRadius);
     }
     
-    public void IncreaseHP(int hpPoints)
+
+    public void IncreaseHP(int hpPoints) // Должна быть в другом классе
     {
         _hp += hpPoints;
         HealthIndicator.Health = _hp;
@@ -111,6 +148,11 @@ public class CourseScript : MonoBehaviour
         }
     }
     
+    // Очередность инкапсуляции :
+    // Serialize
+    // private
+    // public
+    // Эта функция должно быть выше, перед TakeDamage
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

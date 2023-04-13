@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Лишние using
 
 public class heal : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class heal : MonoBehaviour
        CourseScript player = other.GetComponent<CourseScript>(); 
        if (player != null && HealthIndicator.Health !=3)
        {
-           player.IncreaseHP(_hpPoints);
+            player.IncreaseHP(_hpPoints);
             _animator.SetBool("smoke", true);
             Invoke(nameof(Destroy), 0.3f);
        }

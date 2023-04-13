@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// лишние юзинги
 public class Slimer : MonoBehaviour
 {
     [SerializeField] private float _walkRange;

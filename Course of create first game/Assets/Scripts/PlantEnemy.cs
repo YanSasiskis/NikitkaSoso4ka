@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// лишние
 
 public class PlantEnemy : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlantEnemy : MonoBehaviour
     [SerializeField] private Transform _mazzle;
     [SerializeField] private Rigidbody2D _bullet;
     [SerializeField] private float _projectileSpeed;
+    // _canShoor должен быть после SerializeFields, на строке 19
     private bool _canShoot;
 
     [Header("Animation")]
@@ -24,6 +26,7 @@ public class PlantEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        // “акие if можно писать в одно строчку: if(_canShoot) return; 
         if (_canShoot)
         {
             return;
@@ -54,6 +57,7 @@ public class PlantEnemy : MonoBehaviour
     }
     public void Shoot()
     {
+        // –еализовать ObjectPool, каждый раз создавать пулю затратно
         Rigidbody2D bullet = Instantiate(_bullet, _mazzle.position, Quaternion.identity);
         if (!_faceRight)
         {
