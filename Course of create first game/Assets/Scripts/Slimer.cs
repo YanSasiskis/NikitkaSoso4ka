@@ -25,7 +25,6 @@ public class Slimer : MonoBehaviour
             }
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(_drawPosition, new Vector3(_walkRange * 2, 1, 0));
@@ -55,5 +54,4 @@ public class Slimer : MonoBehaviour
         transform.Rotate(0, 180, 0);
         _direction *= -1;
     }
-    
 }

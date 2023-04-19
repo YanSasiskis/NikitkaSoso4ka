@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 //Лишне using
 public class HealthIndicator : MonoBehaviour
